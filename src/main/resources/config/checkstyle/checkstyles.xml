@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <module name="TreeWalker">
+        <!-- Naming -->
+        <module name="TypeName"/>
+        <module name="MethodName"/>
+        <module name="VariableName"/>
+        <module name="ConstantName"/>
+
+        <!-- Indentation and Whitespace -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+        </module>
+        <module name="LineLength">
+            <property name="max" value="9999"/>
+        </module>
+        <module name="FileTabCharacter">
+            <property name="severity" value="ignore"/>
+        </module>
+
+        <!-- Imports -->
+        <module name="UnusedImports"/>
+        <module name="ImportOrder"/>
+
+        <!-- Javadoc -->
+        <module name="JavadocType" enabled="false"/>
+        <module name="JavadocMethod" enabled="false"/>
+
+        <!-- Class Design -->
+        <module name="FinalClass"/>
+        <module name="VisibilityModifier"/>
+
+        <!-- Complexity -->
+        <module name="CyclomaticComplexity">
+            <property name="max" value="10"/>
+        </module>
+        <module name="NPathComplexity">
+            <property name="max" value="50"/>
+        </module>
+
+        <!-- Miscellaneous -->
+        <module name="MagicNumber" enabled="false"/>
+    </module>
+</module>
