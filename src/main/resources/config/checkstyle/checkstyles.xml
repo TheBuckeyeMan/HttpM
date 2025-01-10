@@ -27,8 +27,6 @@
         <module name="ImportOrder"/>
 
         <!-- Javadoc -->
-        <module name="JavadocType" enabled="false"/>
-        <module name="JavadocMethod" enabled="false"/>
 
         <!-- Class Design -->
         <module name="FinalClass"/>
@@ -43,6 +41,6 @@
         </module>
 
         <!-- Miscellaneous -->
-        <module name="MagicNumber" enabled="false"/>
+
     </module>
 </module>
