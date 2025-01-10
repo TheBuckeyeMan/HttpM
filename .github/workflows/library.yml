@@ -51,6 +51,9 @@ jobs:
 
       - name: Run Checkstyle Analysis
         run: mvn checkstyle:check
+        
+      - name: List Files in Host Repo
+        run: ls -la $GITHUB_WORKSPACE
 
       - name: Verify JAVA_HOME
         run: echo "JAVA_HOME is set to $JAVA_HOME"
