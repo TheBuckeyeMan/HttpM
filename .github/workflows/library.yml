@@ -3,7 +3,7 @@ name: Library CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   LIBRARY_NAME: "HttpM"
