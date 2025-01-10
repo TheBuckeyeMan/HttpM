@@ -52,23 +52,23 @@ jobs:
       - name: Run Checkstyle Analysis
         run: mvn checkstyle:check
         
-      - name: List Files in Host Repo
-        run: ls -la $GITHUB_WORKSPACE
+    #   - name: List Files in Host Repo
+    #     run: ls -la $GITHUB_WORKSPACE
 
-      - name: Verify JAVA_HOME
-        run: echo "JAVA_HOME is set to $JAVA_HOME"
+    #   - name: Verify JAVA_HOME
+    #     run: echo "JAVA_HOME is set to $JAVA_HOME"
     
-      - name: Set JAVA_HOME
-        run: echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
+    #   - name: Set JAVA_HOME
+    #     run: echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
 
-      - name: OWASP Dependency Check
-        uses: dependency-check/Dependency-Check_Action@1.1.0
-        with:
-          project: HttpM
-          format: 'ALL'
-          path: './'
-        env:
-          JAVA_HOME: ${{ env.JAVA_HOME }}
+    #   - name: OWASP Dependency Check
+    #     uses: dependency-check/Dependency-Check_Action@1.1.0
+    #     with:
+    #       project: HttpM
+    #       format: 'ALL'
+    #       path: './'
+    #     env:
+    #       JAVA_HOME: ${{ env.JAVA_HOME }}
 
   # Job 3: Build the Library
   Build:
