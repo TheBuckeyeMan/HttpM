@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>am.library</groupId>
+	<artifactId>HttpM</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!--Project MetaData-->
+	<name>HttpM</name>
+	<description>Custom Lightweight API Library to Customize Requests</description>
+	<url>https://github.com/TheBuckeyeMan/HttpM</url>
+	
+	<!--Lisense Information-->
+	<licenses>
+		<license>
+			<!--Add A Lisense in future release to make publically avaliable: USe either MIT Lisense or Apache Lisense 2.0-->
+            <name>No License Specified</name>
+            <url>https://choosealicense.com/no-permission/</url>
+        </license>
+	</licenses>
+
+	<!--Developer Information-->
+	<developers>
+		<developer>
+			<id>TheBuckeyeMan</id>
+			<name>Adam Maas</name>
+			<url>https://github.com/TheBuckeyeMan</url>
+		</developer>
+	</developers>
+
+
+	<!-- Source Control Management -->
+    <scm>
+        <connection>scm:git:git://github.com/TheBuckeyeMan/HttpM.git</connection>
+        <developerConnection>scm:git:ssh://github.com/TheBuckeyeMan/HttpM.git</developerConnection>
+        <url>https://github.com/TheBuckeyeMan/HttpM</url>
+    </scm>
+
+	<!--Java Version-->
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<!--Required Dependencies-->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>3.4.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>4.11.0</version>
+		</dependency>
+		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+	</dependencies>
+
+    <!-- Build Configuration -->
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Deploy Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+	<!-- Distribution Management for GitHub Packages -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/TheBuckeyeMan/HttpM</url>
+        </repository>
+    </distributionManagement>
+
+    <!-- Repositories -->
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/TheBuckeyeMan/HttpM</url>
+        </repository>
+    </repositories>
+</project>
