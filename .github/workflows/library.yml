@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dev
 
 env:
   LIBRARY_NAME: "HttpM"
@@ -89,5 +88,5 @@ jobs:
 
       - name: Deploy Library to GitHub Packages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CICD_GH_TOKEN }}
         run: mvn deploy -DskipTests
