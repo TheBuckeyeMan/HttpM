@@ -58,6 +58,8 @@ jobs:
           project: HttpM
           format: 'ALL'
           path: './'
+        env:
+          JAVA_HOME: ${{ env.JAVA_HOME }}
 
   # Job 3: Build the Library
   Build:
