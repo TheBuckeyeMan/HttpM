@@ -1,3 +1,6 @@
+/**
+ * Main package for the HttpM library.
+ */
 package am.library.HttpM;
 
 import org.springframework.boot.SpringApplication;
