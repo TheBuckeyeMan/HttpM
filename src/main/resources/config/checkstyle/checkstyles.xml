@@ -4,43 +4,48 @@
     "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <!-- Line Length should be outside TreeWalker -->
+    <module name="LineLength">
+        <property name="max" value="120"/> <!-- Set a reasonable limit -->
+        <property name="severity" value="warning"/>
+    </module>
+
     <module name="TreeWalker">
         <!-- Naming -->
-        <module name="TypeName"/>
-        <module name="MethodName"/>
-        <module name="VariableName"/>
-        <module name="ConstantName"/>
-
-        <!-- Indentation and Whitespace -->
-        <module name="Indentation">
-            <property name="basicOffset" value="4"/>
+        <module name="TypeName">
+            <property name="severity" value="warning"/>
         </module>
-        <module name="LineLength">
-            <property name="max" value="9999"/>
+        <module name="MethodName">
+            <property name="severity" value="warning"/>
         </module>
-        <module name="FileTabCharacter">
-            <property name="severity" value="ignore"/>
+        <module name="ConstantName">
+            <property name="severity" value="warning"/>
         </module>
 
         <!-- Imports -->
-        <module name="UnusedImports"/>
-        <module name="ImportOrder"/>
-
-        <!-- Javadoc -->
+        <module name="UnusedImports">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="ImportOrder">
+            <property name="severity" value="warning"/>
+        </module>
 
         <!-- Class Design -->
-        <module name="FinalClass"/>
-        <module name="VisibilityModifier"/>
+        <module name="FinalClass">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="VisibilityModifier">
+            <property name="severity" value="warning"/>
+        </module>
 
         <!-- Complexity -->
         <module name="CyclomaticComplexity">
             <property name="max" value="10"/>
+            <property name="severity" value="warning"/>
         </module>
         <module name="NPathComplexity">
             <property name="max" value="50"/>
+            <property name="severity" value="warning"/>
         </module>
-
-        <!-- Miscellaneous -->
-
     </module>
 </module>

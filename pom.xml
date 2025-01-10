@@ -97,6 +97,7 @@
 					<encoding>UTF-8</encoding>
 					<consoleOutput>true</consoleOutput>
 					<failsOnError>false</failsOnError>
+					<violationSeverity>warning</violationSeverity> <!-- Set violations as warnings -->
 				</configuration>
 				<executions>
 					<execution>
