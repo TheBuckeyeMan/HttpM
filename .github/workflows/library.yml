@@ -103,6 +103,7 @@ jobs:
           name: jar-file
 
       - name: Deploy Library to GitHub Packages
+        working-directory: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.CICD_GH_TOKEN }}
           LIBRARY_VERSION: ${{ needs.Test.outputs.version }}
