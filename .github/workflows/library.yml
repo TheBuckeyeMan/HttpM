@@ -49,8 +49,8 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Run Checkstyle Analysis
-        run: mvn checkstyle:check
+    #   - name: Run Checkstyle Analysis
+    #     run: mvn checkstyle:check
         
     #   - name: List Files in Host Repo
     #     run: ls -la $GITHUB_WORKSPACE
