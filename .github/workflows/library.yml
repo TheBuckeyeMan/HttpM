@@ -101,10 +101,16 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: jar-file
+      - name: Print Working Directory
+        run: pwd
+      - name: List Files in Working Directory
+        run: ls -la
 
       - name: Deploy Library to GitHub Packages
         working-directory: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.CICD_GH_TOKEN }}
           LIBRARY_VERSION: ${{ needs.Test.outputs.version }}
-        run: mvn deploy -DskipTests -Dproject.version=${{ env.LIBRARY_VERSION }}
+        run: |
+            echo "Deploying from working directory: $(pwd)"
+            mvn deploy -DskipTests -Dproject.version=${{ env.LIBRARY_VERSION }}
