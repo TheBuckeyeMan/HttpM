@@ -36,9 +36,9 @@ public class HttpMApplication {
 			log.info("Attempting to APIK Request");
 			String request2 = getRequest.executeGetRequest("APIK","application/json", "https://api.collegefootballdata.com/games", "OjsY5xQX5AYP4xYURwX2Uylw/xg1SNYkAL7kTljjDfv3bjtf6WS/6oVaVON0QpsO", "",  Map.of("year","2024","week","1","seasonType","regular","team","ohio state"));
             System.out.println("APIK Sample Request: " + request2);
-			// log.info("Attempting to APIP Request");
-			// String request3 = getRequest.executeGetRequest("APIP",responseType, url, key, keyName,  params);
-            // System.out.println("APIP Sample Request: " + request3);
+			log.info("Attempting to APIP Request");
+			String request3 = getRequest.executeGetRequest("APIP","application/json", "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/columbus%20ohio", "APBLK5Q42W884G6SR6MU9WXF6", "key",  params);
+            System.out.println("APIP Sample Request: " + request3);
 			log.info("Attempting to NoAuth Request");
 			String request4= getRequest.executeGetRequest("NoAuth","application/json", "https://catfact.ninja/fact", "", "",  Map.of("max_length","140"));
             System.out.println("NoAuth Sample Request: " + request4);

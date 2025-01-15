@@ -1,13 +1,11 @@
 package am.library.HttpM.ApiRequests;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import okhttp3.HttpUrl;
-import okhttp3.OkHttp;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -122,14 +120,14 @@ public class GetRequest {
 
     //Helper method
     private void validateApiKeyName(String keyName){
-        if (keyName == null || keyName == ""){
+        if (keyName == null || keyName.isEmpty()){
             throw new IllegalArgumentException("API Key Name is Required and was Not passed wiht the request");
         }
     }
 
     //Helper method
     private void validateApiKey(String key){
-        if (key == null || key == ""){
+        if (key == null || key.isEmpty()){
             throw new IllegalArgumentException("API Key is Required and no API Key was passed with the request");
         }
     }
