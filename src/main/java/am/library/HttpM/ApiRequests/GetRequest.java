@@ -24,6 +24,7 @@ public class GetRequest implements GetInterfaces{
         log.info("Get API Request Type: {" + authType + "}");
 
         //Validate Request by URL
+
         validateRequest(authType, url);
 
         //Add params
