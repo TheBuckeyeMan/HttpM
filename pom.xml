@@ -5,7 +5,7 @@
 
 	<groupId>am.library</groupId>
 	<artifactId>HttpM</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!--Project MetaData-->
@@ -154,6 +154,11 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>3.0.0-M1</version>
             </plugin>
+			<plugin>
+				<groupId>com.github.johnrengelman</groupId>
+				<artifactId>shadow</artifactId>
+				<version>7.1.2</version>
+			</plugin>
 
         </plugins>
     </build>
