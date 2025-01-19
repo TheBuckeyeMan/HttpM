@@ -1,38 +1,61 @@
-package am.library.HttpM.ApiRequestsTests;
+// package am.library.HttpM.ApiRequestsTests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.Assert.assertTrue;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.Map;
+// import java.io.IOException;
+// import java.util.Map;
+// import okhttp3.mockwebserver.MockResponse;
+// import okhttp3.mockwebserver.MockWebServer;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.AfterAll;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.Disabled;
+// import org.junit.jupiter.api.DisplayName;
+// import org.junit.jupiter.api.Test;
+// import org.mockito.Mock;
+// import am.library.HttpM.ApiRequests.GetRequest;
 
-import am.library.HttpM.ApiRequests.GetRequest;
+// /*
+//  * Test for GetRequest for 
+//  * Validate input parameters
+//  * Handle authentication types (
+//  * Generate URL's with Queery params
+//  * Hake Http calls
+//  * Handle Responses
+//  */
+// public class GetRequestTest {
+//     private GetRequest getRequest;
+//     private MockWebServer mockWebServer;
 
-/*
- * Test for GetRequest
- */
-public class GetRequestTest {
+//     @BeforeEach
+//     void setUp() throws Exception{
+//         getRequest = new GetRequest();
+//         mockWebServer = new MockWebServer();
+//     }
 
-    private GetRequest getRequest;
+//     @DisplayName("Success Test Scenario")
+//     @Test
+//     void testExecuteGetRequest() throws Exception{
+        
+//         mockWebServer.enqueue(new MockResponse().setResponseCode(200).setBody("{\"message\":\"success\"}"));
+//         mockWebServer.start();
 
-    @BeforeEach
-    void setUp(){
-        getRequest = new GetRequest();
-    }
+//         String baseUrl = mockWebServer.url("/api/data").toString();
+//         Map<String, String> params = Map.of("key1","value1","key2","value2");
 
-    // @Test
-    // void testExceptionGetRequest_ValidInput(){
-    //     String type = "APIK";
-    //     String url = "https://example.com";
-    //     String key = "testKey";
-    //      Map<String, String> params = Map.of("param1","value1"); // Query parameters
-    //     String keyName = "";
-    //     String responseType = "application/json";
+//         //Act
+//         String result = getRequest.executeGetRequest("oauth", "application/json", baseUrl,null,null, params);
 
-    //     String result = getRequest.executeGetRequest(type,responseType, url, key,keyName, params);
+//         //Assertions
+//         assertEquals("{\"message\":\"success\"}", result);
+//         assertEquals(1, mockWebServer.getRequestCount());
+//     }
 
-    //     assertEquals("", result, "Expected empty string as executeGetRequest output");
-    // }
-    
-}
+
+//     @AfterAll
+//     void tearDown() throws Exception{
+//         mockWebServer.shutdown();
+//     }
+// }

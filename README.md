@@ -1,6 +1,16 @@
 # HttpM Library
 HttpM Makes it easier for you to call API's
 
+## Library Required Dependencies
+1.OkHttp
+2.JSoup
+3.Mockito
+4.Junit
+5.
+
+## Testing Criteria - HttpM
+Testing will only be conducted on Public methods, and private methods that are extesivly leveraged
+
 # How to use
 ## Import Dependencies to your project
 `Some code here for POM.XML`

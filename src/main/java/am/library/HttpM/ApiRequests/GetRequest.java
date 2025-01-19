@@ -10,16 +10,15 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-
 @Service
-public class GetRequest {
+public class GetRequest implements GetInterfaces{
     private static final Logger log = LoggerFactory.getLogger(GetRequest.class);
 
     /*
-     * 
      * @Params
-     *Returns: Response from API 
+     * @Returns: Response from API 
      */
+    @Override
     public String executeGetRequest(String authType, String responseType, String url, String key, String keyName, Map<String, String> params){
         //Log type of API
         log.info("Get API Request Type: {" + authType + "}");
@@ -36,7 +35,6 @@ public class GetRequest {
 
         //Execute the Request
         return sendGetRequest(getRequest);
-
     }
 
     //Helper method
