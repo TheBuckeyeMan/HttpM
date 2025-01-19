@@ -110,7 +110,21 @@ jobs:
       - name: Debug Authentication
         run: |
           echo "GITHUB_ACTOR: ${{ github.actor }}"
-          echo "TOKEN_LENGTH: ${#secrets.GH_LIBRARY_TOKEN}"
+          echo "GITHUB_TOKEN: ${{ secrets.GH_LIBRARY_TOKEN }}"
+          echo "TOKEN_LENGTH: $(echo -n ${{ secrets.GH_LIBRARY_TOKEN }} | wc -c)"
+
+      - name: Configure Maven for GitHub Packages
+        run: |
+            mkdir -p ~/.m2
+            echo '<settings>
+            <servers>
+                <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GH_LIBRARY_TOKEN }}</password>
+                </server>
+            </servers>
+            </settings>' > ~/.m2/settings.xml
 
       - name: Deploy Library to GitHub Packages
         working-directory: ${{ github.workspace }}
