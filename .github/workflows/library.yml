@@ -85,6 +85,13 @@ jobs:
 
       - name: Build Library
         run: mvn clean package
+        #Delete after we figure out  solution
+      - name: Inspect Artifact Contents
+        run: |
+          echo "Inspecting JAR contents..."
+          jar tf target/*.jar
+          echo "Inspecting POM metadata inside JAR..."
+          jar xf target/*.jar META-INF/MANIFEST.MF && cat META-INF/MANIFEST.MF
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
@@ -125,6 +132,13 @@ jobs:
                 </server>
             </servers>
             </settings>' > ~/.m2/settings.xml
+        #Delete after we figure out
+      - name: Inspect Artifact Contents (After Configure Maven)
+        run: |
+            echo "Inspecting JAR contents after configuring Maven..."
+            jar tf target/*.jar
+            echo "Inspecting POM metadata inside JAR..."
+            jar xf target/*.jar META-INF/MANIFEST.MF && cat META-INF/MANIFEST.MF
 
       - name: Deploy Library to GitHub Packages
         working-directory: ${{ github.workspace }}
